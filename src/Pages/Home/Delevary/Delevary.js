@@ -47,6 +47,7 @@ const Delevary = () => {
                                                             <Link to={`/services/${service._id}`}><h3 className="_service_grover_grocery_content_title">{service.serviceName}</h3></Link>
                                                             <p className="_service_grover_grocery_content_para">
                                                                 {service.serviceDes.slice(0, 100) + '...'}
+                                                                <Link to={`/services/${service._id}`}><button className='btn btn-outline-danger'>view Details</button></Link>
                                                             </p>
                                                         </div>
                                                     </div>
