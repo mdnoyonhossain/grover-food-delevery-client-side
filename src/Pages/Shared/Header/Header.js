@@ -36,10 +36,6 @@ const Header = () => {
                                 <Link className="nav-link _active _grover_grocery_list_link" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item _grover_grocery_list_item">
-                                <Link className="nav-link _grover_grocery_list_link" to="/service"
-                                    aria-disabled="true">Service</Link>
-                            </li>
-                            <li className="nav-item _grover_grocery_list_item">
                                 <Link className="nav-link _grover_grocery_list_link" to="/blogs"
                                     aria-disabled="true">Blogs</Link>
                             </li>
