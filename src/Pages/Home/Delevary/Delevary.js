@@ -10,7 +10,7 @@ const Delevary = () => {
         .then(res => res.json())
         .then(data => setServices(data))
     },[])
-console.log(services);
+
     return (
         <section className="_service_grover_grocery_wrapper">
             <div className="_service_grover_grocery_wrap">
@@ -38,10 +38,10 @@ console.log(services);
                                                         className="_service_grover_grocery_content_img" /></Link>
                                                 </div>
                                                 <div className="_service_grover_grocery_content_txt">
-                                                    <h6 className='text-danger'>Price: {service.servicePrice}</h6>
-                                                    <h3 className="_service_grover_grocery_content_title">Free shipping</h3>
+                                                    <h6 className='text-danger'>Price: ${service.servicePrice}</h6>
+                                                    <Link to={`/services/${service._id}`}><h3 className="_service_grover_grocery_content_title">{service.serviceName}</h3></Link>
                                                     <p className="_service_grover_grocery_content_para">
-                                                        {service.serviceDes}
+                                                        {service.serviceDes.slice(0, 100) + '...'}
                                                     </p>
                                                 </div>
                                             </div>
