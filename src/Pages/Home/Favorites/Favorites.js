@@ -1,6 +1,7 @@
 import React from 'react';
 import feat from '../../../assets/images/feat.png'
 
+
 const Favorites = () => {
     return (
         <section className="_feature_grover_grocery_wrapper">

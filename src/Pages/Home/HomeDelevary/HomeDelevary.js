@@ -4,6 +4,7 @@ import mobile from '../../../assets/images/mobile.svg'
 import apple from '../../../assets/images/apple.svg'
 import playstore from '../../../assets/images/playstore.svg'
 
+
 const HomeDelevary = () => {
     return (
         <div>
@@ -62,6 +63,7 @@ const HomeDelevary = () => {
                                                     <img src={apple} alt="Apple Logo" />
                                                 </span> App Store
                                             </a>
+                                            
                                             <a href="#0" className="_playstore_btn">
                                                 <span className="_playstore_ic">
                                                     <img src={playstore} alt="Playstore Logo" />
