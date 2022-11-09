@@ -14,4 +14,4 @@ Hosted in Grover Server Side Application -> [Grover](https://bucolic-pixie-bd4f4
 5. Database MongoDB
 6. Private Router Intrgration
 7. Review Intrgration
-
+8. JWT Token
