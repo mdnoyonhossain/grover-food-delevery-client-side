@@ -32,6 +32,7 @@ const AuthContext = ({ children }) => {
     }
 
     const logOut = () => {
+        localStorage.removeItem('grover-token');
         return signOut(auth)
     }
 
