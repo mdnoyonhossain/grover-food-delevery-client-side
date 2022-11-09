@@ -31,7 +31,8 @@ const ReviewsRow = ({ review, handleDelete }) => {
         newUser[field] = value;
         setReviews(newUser);
     }
-
+    
+    console.log(reviews);
     return (
         <tr>
             <td>image</td>
@@ -71,6 +72,7 @@ const ReviewsRow = ({ review, handleDelete }) => {
                 </div>
             </div>
         </tr>
+        
     );
 };
 
