@@ -8,7 +8,7 @@ const ReviewsRow = ({ review, handleDelete }) => {
         event.preventDefault();
         console.log(reviews);
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://grover-server.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

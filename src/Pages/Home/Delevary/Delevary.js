@@ -7,7 +7,7 @@ const Delevary = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/delevary')
+        fetch('https://grover-server.vercel.app/delevary')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

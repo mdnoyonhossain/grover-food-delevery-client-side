@@ -2,8 +2,8 @@
 Food Delevery High Quality Grover Delevery Appliances at Extremely.
 
 ## Live Link
-Hosted in Grover Application -> [Grover](https://bucolic-pixie-bd4f4d.netlify.app/)
-Hosted in Grover Server Side Application -> [Grover](https://bucolic-pixie-bd4f4d.netlify.app/)
+Hosted in Grover Application -> [Grover](https://grover-556c8.web.app/)
+Hosted in Grover Server Side Application -> [Grover](https://grover-server.vercel.app)
 
 
 ## Application Build

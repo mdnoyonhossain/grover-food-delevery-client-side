@@ -22,7 +22,7 @@ const AddService = () => {
             serviceDes
         }        
         
-        fetch('http://localhost:5000/services', {
+        fetch('https://grover-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

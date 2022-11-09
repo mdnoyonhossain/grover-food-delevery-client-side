@@ -10,7 +10,7 @@ const AddReview = () => {
     useTitle('My Review')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://grover-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('grover-token')}`
             }
@@ -30,7 +30,7 @@ const AddReview = () => {
     const handleDelete = id => {
         const agree = window.confirm('Are you Sure, you want to cancle this Review');
         if (agree) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://grover-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

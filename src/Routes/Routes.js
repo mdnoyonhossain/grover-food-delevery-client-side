@@ -23,13 +23,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/service',
-                loader: () => fetch('http://localhost:5000/services'),
+                loader: () => fetch('https://grover-server.vercel.app/services'),
                 element: <Services></Services>
             },
             {
                 path: '/services/:id',
                 element: <ServicesDetails></ServicesDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://grover-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
