@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg'
 import { UserContext } from '../../contexts/AuthContext';
 
 const Register = () => {
-
     const {createUser, userDisplayName, googleSignIn} = useContext(UserContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
     
     const handleSubmit = event => {
         event.preventDefault();
@@ -21,6 +24,8 @@ const Register = () => {
             const user = result.user;
             userProfileUpdate(fName, photourl);
             console.log(user);
+            from.reset();
+            navigate(from, { replace: true });
         })
         .catch(error => {
             toast.error(error.message)
@@ -39,7 +44,9 @@ const Register = () => {
 
     const googlePopup = () => {
         googleSignIn()
-        .then(() => {})
+        .then(() => {
+            navigate(from, { replace: true });
+        })
         .catch(error => toast.error(error.message))
     }
 

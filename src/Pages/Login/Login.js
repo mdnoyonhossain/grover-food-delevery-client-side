@@ -1,12 +1,16 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg'
 import { UserContext } from '../../contexts/AuthContext';
 import './Login.css'
 
 const Login = () => {
     const {userSignIn, googleSignIn} = useContext(UserContext);
+    
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -18,13 +22,17 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            from.reset();
+            navigate(from, { replace: true });
         })
         .catch(error => toast.error(error.message))
     }
 
     const googlePopup = () => {
         googleSignIn()
-        .then(() => {})
+        .then(() => {
+            navigate(from, { replace: true });
+        })
         .catch(error => toast.error(error.message))
     }
 

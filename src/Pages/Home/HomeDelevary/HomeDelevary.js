@@ -4,7 +4,6 @@ import mobile from '../../../assets/images/mobile.svg'
 import apple from '../../../assets/images/apple.svg'
 import playstore from '../../../assets/images/playstore.svg'
 
-
 const HomeDelevary = () => {
     return (
         <div>

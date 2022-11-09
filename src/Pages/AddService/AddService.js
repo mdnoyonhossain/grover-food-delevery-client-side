@@ -37,46 +37,46 @@ const AddService = () => {
     }
 
     return (
-        <section class="mb-4 container p-5 rounded" style={{ backgroundColor: '#FEF5F5' }}>
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Add Service</h2>
-            <div class="row">
-                <div class="col-md-8 m-auto mb-md-0 mb-5">
+        <section className="mb-4 container p-5 rounded" style={{ backgroundColor: '#FEF5F5' }}>
+            <h2 className="h1-responsive font-weight-bold text-center my-4">Add Service</h2>
+            <div className="row">
+                <div className="col-md-8 m-auto mb-md-0 mb-5">
                     <form onSubmit={handleSubmit}>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="md-form mb-0">
-                                    <input type="text" id="name" name="serviceName" placeholder='Service Name' class="form-control" />
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="md-form mb-0">
+                                    <input type="text" id="name" name="serviceName" placeholder='Service Name' className="form-control" required />
                                     <br />
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="md-form mb-0">
-                                    <input type="text" name='servicePrice' placeholder='Service Price' class="form-control" />
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form mb-0">
-                                    <input type="text" id="subject" name="serviceUrl" placeholder='Service URL' class="form-control" />
+                            <div className="col-md-6">
+                                <div className="md-form mb-0">
+                                    <input type="text" name='servicePrice' placeholder='Service Price' className="form-control" required />
                                     <br />
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <textarea type="text" id="message" placeholder='Service Description' name="serviceDes" rows="2" class="form-control md-textarea"></textarea>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="md-form mb-0">
+                                    <input type="text" id="subject" name="serviceUrl" placeholder='Service URL' className="form-control" required />
                                     <br />
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center text-md-left">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="md-form">
+                                    <textarea type="text" id="message" placeholder='Service Description' name="serviceDes" rows="2" className="form-control md-textarea" required></textarea>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="text-center text-md-left">
                             <button type='submit' className='btn btn-danger'>Add Services</button>
                         </div>
                     </form>
-                    <div class="status"></div>
+                    <div className="status"></div>
                 </div>
             </div>
         </section>
