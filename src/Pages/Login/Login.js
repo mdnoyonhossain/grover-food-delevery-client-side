@@ -3,11 +3,14 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg'
 import { UserContext } from '../../contexts/AuthContext';
+import useTitle from '../../hooks/useTitle';
 import './Login.css'
 
 const Login = () => {
     const {userSignIn, googleSignIn} = useContext(UserContext);
-    
+
+    useTitle('Login')
+
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
