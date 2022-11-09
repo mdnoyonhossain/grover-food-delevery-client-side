@@ -29,7 +29,6 @@ const AddReview = () => {
         }
     }
 
-
     return (
         <div>
             <div className="container-xl">
@@ -66,10 +65,6 @@ const AddReview = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
             
         </div>
     );

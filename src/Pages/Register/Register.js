@@ -24,7 +24,6 @@ const Register = () => {
             const user = result.user;
             userProfileUpdate(fName, photourl);
             console.log(user);
-            from.reset();
             navigate(from, { replace: true });
         })
         .catch(error => {

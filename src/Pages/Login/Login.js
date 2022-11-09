@@ -21,8 +21,7 @@ const Login = () => {
         userSignIn(email, password)
         .then(result => {
             const user = result.user;
-            console.log(user);
-            from.reset();
+            console.log(user);            
             navigate(from, { replace: true });
         })
         .catch(error => toast.error(error.message))
