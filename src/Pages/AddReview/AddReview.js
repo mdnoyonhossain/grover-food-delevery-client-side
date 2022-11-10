@@ -6,7 +6,6 @@ import ReviewsRow from './ReivewsRow';
 const AddReview = () => {
     const { user, logOut } = useContext(UserContext);
     const [reviews, setReviews] = useState([]);
-
     useTitle('My Review')
 
     useEffect(() => {
@@ -16,7 +15,7 @@ const AddReview = () => {
             }
         })
             .then(res => {
-                if(res.status === 401 || res.status === 403){
+                if (res.status === 401 || res.status === 403) {
                     logOut()
                 }
                 return res.json()
@@ -43,44 +42,50 @@ const AddReview = () => {
                 })
         }
     }
+    
 
     return (
         <div>
-            <div className="container-xl">
-                <div className="table-responsive">
-                    <div className="table-wrapper">
-                        <div className="table-title">
-                            <div className="row">
-                                <div className="col-sm-6">
-                                    <h2>Manage <b>Review</b></h2>
+            {
+                reviews.length ?
+                    <div className="container-xl">
+                        <div className="table-responsive">
+                            <div className="table-wrapper">
+                                <div className="table-title">
+                                    <div className="row">
+                                        <div className="col-sm-6">
+                                            <h2><span className='text-danger'>{user?.displayName}</span> Manage Your <b>Review</b></h2>
+                                        </div>
+                                    </div>
                                 </div>
+                                <table className="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Review User</th>
+                                            <th>Email</th>
+                                            <th>Service Price</th>
+                                            <th>Phone</th>
+                                            <th>Rating</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        {
+                                            reviews.map(review => <ReviewsRow key={review._id} review={review} handleDelete={handleDelete}></ReviewsRow>)
+                                        }
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <table className="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Review User</th>
-                                    <th>Email</th>
-                                    <th>Service Price</th>
-                                    <th>Phone</th>
-                                    <th>Rating</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                {
-                                    reviews.map(review => <ReviewsRow key={review._id} review={review} handleDelete={handleDelete}></ReviewsRow>)
-                                }
-
-                            </tbody>
-                        </table>
                     </div>
-                </div>
-            </div>
-
+                    :
+                    <h1 className='text-center text-danger'>Hello <span className='text-success'>{user?.displayName}</span>, Please Review Added</h1>
+            }
+            
         </div>
     );
 };

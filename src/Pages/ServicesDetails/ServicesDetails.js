@@ -21,8 +21,11 @@ const ServicesDetails = () => {
         const phone = form.phone.value;
         const email = user ? user.email : 'unRegisterd';
         const message = form.message.value;
+        const userReview = user?.photoURL;
 
         const order = {
+            userReview,
+            serviceUrl,
             serviceName,
             servicePrice,
             name,
@@ -52,9 +55,9 @@ const ServicesDetails = () => {
         fetch('https://grover-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
-    console.log(reviews);
+    }, [reviews])
 
+    
     return (
         <div className='container'>
             <div className='container border rounded shadow bg-danger p-3'>
@@ -70,28 +73,6 @@ const ServicesDetails = () => {
                 </div>
             </div>
 
-
-            {/* <div className="row row-cols-1 row-cols-md-3 g-4 mt-5 mb-5 rounded shadow p-5 border">
-
-                {
-                    reviews.map(review => <div key={review._id} className="col">
-                        <div className="card border p-3">
-                           
-                            <img src={user?.photoURL} className="card-img-top" style={{width: '70px', borderRadius: '50%'}} alt="." />
-                            
-                            <div className="card-body">
-                                <h5 className="card-title">{review.name}</h5>
-                                <p className='m-0'><small>{review.email}</small></p>
-                                <p><small className='text-success'>Star: {review.rating}</small></p>
-                                <p className="card-text">{review.message.slice(0, 145)}</p>
-                            </div>
-                        </div>
-                    </div>)
-                }
-
-            </div> */}
-
-
             {
                 user?.uid ?
                     <div>
@@ -101,12 +82,12 @@ const ServicesDetails = () => {
                                 reviews.map(review => <div key={review._id} className="col">
                                     <div className="card border p-3">
 
-                                        <img src={user?.photoURL} className="card-img-top" style={{ width: '70px', borderRadius: '50%' }} alt="." />
+                                        <img src={review?.userReview} className="card-img-top" style={{ width: '60px', height: '60px', borderRadius: '50%' }} alt="." />
 
                                         <div className="card-body">
                                             <h5 className="card-title">{review.name}</h5>
                                             <p className='m-0'><small>{review.email}</small></p>
-                                            <p><small className='text-success'>Star: {review.rating}</small></p>
+                                            <p><small className='text-danger'>Star: {review.rating}</small></p>
                                             <p className="card-text">{review.message.slice(0, 145)}</p>
                                         </div>
                                     </div>
