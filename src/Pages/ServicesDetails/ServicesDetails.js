@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { UserContext } from '../../contexts/AuthContext';
+import useTitle from '../../hooks/useTitle';
 
 
 
@@ -11,6 +12,7 @@ const ServicesDetails = () => {
     const { user } = useContext(UserContext);
 
     const [reviews, setReviews] = useState([]);
+    useTitle('Service Details')
 
     const handleSubmit = event => {
         event.preventDefault();
